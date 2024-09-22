@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#" class="view-products">Playeras</a></li>
+            <li><a href="#" class="view-products">Calzado</a></li>
+            <li><a href="#">Ofertas</a></li>
+            <li><a href="#" class="view-datatable">Ver DataTable</a></li> <!-- Manteniendo el estilo -->
+        </ul>
+        <div class="account-section">
+            <span class="account-text">CUENTA</span>
+            <button class="icon-button">
+                <img src="carro.png" alt="">
+            </button>
+            <span class="cart-count">0</span>
+            <button class="icon-button">
+                <img src="usuario.png" alt="">
+            </button>
+            <button class="icon-button">
+                <img src="hamburguesa.png" alt="">
+            </button>
+        </div> 
+    </nav>
+
+    <div class="search-container">
+        <input type="text" placeholder="Buscador" class="search-bar">
+    </div>
+
+    <div id="product-view" class="product-grid">
+        <div class="product">
+            <img src="luces.jpg" alt="Luces blancas">
+            <p>Luces blancas</p>
+            <p>$25</p>
+        </div>
+        <div class="product">
+            <img src="tenis.jpg" alt="Tenis rosas">
+            <p>Tenis rosas</p>
+            <p>$15</p>
+        </div>
+        <div class="product">
+            <img src="sudadera.jpg" alt="Sudadera deportiva">
+            <p>Sudadera deportiva</p>
+            <p>$50</p>
+        </div>
+        <div class="product">
+            <img src="pantalon.jpg" alt="Pantalones de vestir">
+            <p>Pantalones de vestir</p>
+            <p>$30</p>
+        </div>
+        <div class="product">
+            <img src="reloj.jpg" alt="Reloj inteligente">
+            <p>Reloj inteligente</p>
+            <p>$100</p>
+        </div>
+        <div class="product">
+            <img src="asador.jpg" alt="Asador color negro">
+            <p>Asador color negro</p>
+            <p>$250</p>
+        </div>
+        <div class="product">
+            <img src="short.jpg" alt="Pantalón corto deportivo">
+            <p>Pantalón corto deportivo</p>
+            <p>$30</p>
+        </div>
+        <div class="product">
+            <img src="descarga.jpg" alt="Reloj deportivo">
+            <p>Reloj deportivo</p>
+            <p>$110</p>
+        </div>
+    </div>
+
+    <!-- Vista de DataTable -->
+    <div id="datatable-view" style="display: none;">
+        <table id="myTable" class="display">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Luces blancas</td>
+                    <td>$25</td>
+                </tr>
+                <tr>
+                    <td>Tenis rosas</td>
+                    <td>$15</td>
+                </tr>
+                <tr>
+                    <td>Sudadera deportiva</td>
+                    <td>$50</td>
+                </tr>
+                <tr>
+                    <td>Pantalones de vestir</td>
+                    <td>$30</td>
+                </tr>
+                <tr>
+                    <td>Reloj inteligente</td>
+                    <td>$100</td>
+                </tr>
+                <tr>
+                    <td>Asador color negro</td>
+                    <td>$250</td>
+                </tr>
+                <tr>
+                    <td>Pantalón corto deportivo</td>
+                    <td>$30</td>
+                </tr>
+                <tr>
+                    <td>Reloj deportivo</td>
+                    <td>$110</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Inicializa DataTable
+            $('#myTable').DataTable();
+
+            // Alternar vistas
+            $('.view-products').click(function() {
+                $('#product-view').show();
+                $('#datatable-view').hide();
+            });
+
+            $('.view-datatable').click(function() {
+                $('#product-view').hide();
+                $('#datatable-view').show();
+            });
+        });
+    </script>
+</body>
+</html>
